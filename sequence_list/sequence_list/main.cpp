@@ -4,7 +4,7 @@
 int main()
 {
 	int a[] = { 4,2,6,8,12,10,14,16,19,18 };
-	SeqList<int> L(a, sizeof(a) / sizeof(a[0]));
+	SeqList<int> L(a, sizeof(a) / sizeof(a[0]));    //注意别漏写后半部分的sizeof
 
 	//插入操作
 	std::cout << "执行插入操作前数据为：" << std::endl;
