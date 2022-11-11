@@ -12,7 +12,7 @@ inline LinkList<ElemType>::LinkList()
 template<class ElemType>
 LinkList<ElemType>::LinkList(ElemType a[], int n)
 {
-	/*头插法*/
+	/*头插法，倒序排列*/
 	//first->next = NULL;
 	//for (int i = 0; i < n; i++) {
 	//	Node<ElemType>* s = new Node<ElemType>;
@@ -21,16 +21,15 @@ LinkList<ElemType>::LinkList(ElemType a[], int n)
 	//	first->next = s;
 	//}
 
-	/*尾插法*/
-	Node<ElemType>* rear = new Node<ElemType>;     //尾指针
-	rear = first;
+	/*尾插法，顺序排列*/
+	Node<ElemType>* rear = first;    //尾指针
 	for (int i = 0; i < n; i++) {
 		Node<ElemType>* s = new Node<ElemType>;
 		s->data = a[i];
 		rear->next = s;
 		rear = s;
 	}
-	rear->next = NULL;
+	rear->next = NULL;    //此时rear指针指向第n个（最后一个）创建的结点
 }
 
 template<class ElemType>
